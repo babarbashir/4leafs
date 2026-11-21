@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft" data-ground="sage" data-buttons="tonal" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>4Leafs: photograph credits</title>
+<meta name="description" content="The photographers, licences and source pages of the photographs on the 4Leafs website.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="4Leafs: generative soundscapes for focused work">
+<meta property="og:description" content="Rain, Forest and Deep Space, mixed live in your browser. Free plan, or Pro for $6 a month.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f7f9fa">
+<!-- <link rel="canonical" href="https://[the client's domain]/"> : the domain is still to come -->
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #f7f9fa; --p-surface: #ecf0f2; --p-ink: #1f3038; --p-muted: #5d6b72;
+  --p-accent: #0d7480; --p-accent-ink: #ffffff; --p-action: #0d7480; --p-action-ink: #ffffff;
+  --p-inv-bg: #1f3038; --p-inv-surface: #2c3c44; --p-inv-ink: #f7f9fa; --p-inv-muted: #9ea7ab;
+  --p-inv-accent: #f7f9fa; --p-inv-accent-ink: #1f3038; --p-inv-action: #f7f9fa; --p-inv-action-ink: #1f3038;
+  --font-display: "Geist", system-ui, sans-serif;
+  --font-text: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.045em;
+}
+</style>
+<link rel="stylesheet" href="assets/ui/base.css">
+<link rel="stylesheet" href="assets/ui/window/fragment.css">
+<link rel="stylesheet" href="assets/ui/toggles/fragment.css">
+<link rel="stylesheet" href="assets/ui/slider/fragment.css">
+<link rel="stylesheet" href="assets/ui/stat/fragment.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/iris-opens/moment.js">
+<!-- page CSS: only what sits inside a visual, plus one --p-h per card group -->
+<style>
+  /* the hero collage: pieces sized in % of the collage, their text in container units */
+  .ly-collage { container-type: inline-size; }
+  .ly-collage .ly-piece { box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 22px 48px -22px rgb(0 0 0 / .4); }
+  .ly-collage .ly-piece > img { width: 100%; height: 100%; object-fit: cover; }
+  .ly-collage .pc-rain { transform: scale(1.32); }              /* the frame's own letterbox bars stay outside the piece */
+  .pc-card { background: #fff; color: #1f3038; padding: 3.4cqw 3.8cqw; display: grid; align-content: start; gap: 2cqw;
+             font: 400 max(13px, 2cqw)/1.3 var(--font-text); }
+  .pc-card .lbl { color: #5d6b72; font-size: max(13px, 1.8cqw); }
+  .pc-card strong { font: 500 max(16px, 4.4cqw)/1 var(--font-display); letter-spacing: -0.02em; }
+  .pc-card .lay { display: grid; grid-template-columns: 1fr auto; gap: .8cqw 2cqw; align-items: center; }
+  .pc-card .lay i { grid-column: 1 / -1; height: 1cqw; min-height: 4px; border-radius: 99px; background: #e3e9ec; position: relative; overflow: hidden; }
+  .pc-card .lay i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); background: #0d7480; border-radius: inherit; }
+  .pc-card .foot { display: flex; align-items: center; gap: 2cqw; padding-top: 2cqw; border-top: 1px solid #e3e9ec; font-variant-numeric: tabular-nums; }
+  .pc-card .play { width: 5.4cqw; height: 5.4cqw; min-width: 22px; min-height: 22px; border-radius: 50%; background: #0d7480; display: grid; place-items: center; flex: none; }
+  .pc-card .play::before { content: ""; width: 0; height: 0; border-left: 1.4cqw solid #fff; border-top: .9cqw solid transparent; border-bottom: .9cqw solid transparent; margin-left: .3cqw; }
+  .pc-card .play.is-on::before { width: 1.4cqw; height: 1.8cqw; border: 0; margin: 0; background: linear-gradient(90deg, #fff 0 35%, transparent 35% 65%, #fff 65%); }
+  .pc-dark { background: #1f3038; color: #f7f9fa; }
+  .pc-dark .lbl { color: #9ea7ab; } .pc-dark .lay i { background: #2c3c44; } .pc-dark .lay i::after { background: #7fc6cd; }
+  .pc-dark .foot { border-top-color: #2c3c44; }
+  @media (max-width: 639px) { .pc-card .lay:nth-of-type(n+3), .pc-card .hide-sm { display: none; } }
+
+  /* the app frame (sections-library.md, app-frame) */
+  .app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+  .app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+  .app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+  .app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+  .app > .app__pane--list::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+  @media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+  @media (max-width: 1023px) {
+    .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+    .app > .app__pane--list { max-height: 252px; }
+    .app > .app__pane--list::after { display: none; }
+    .app .ui-win__side { display: none; }
+    .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
+    .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+  }
+  @media (max-width: 639px) {
+    .app.ui { grid-template-rows: minmax(0, 1fr); }
+    .app > .app__pane--list { display: none; }
+    .app > .app__pane + .app__pane { border-top: 0; }
+  }
+  .app .ui-win__row { cursor: pointer; }
+  .app .ui-win__row.is-current .ui-win__who { color: var(--u-accent, #0d7480); }
+
+  /* the open pane: the 4Leafs player */
+  .player { display: grid; grid-template-rows: auto auto 1fr auto; gap: var(--s-5); height: 100%; padding: var(--s-6) var(--s-7); color: var(--u-ink, #1f3038); font-family: var(--font-text); }
+  .player__head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); }
+  .player__state { font: 500 13px/1 var(--font-text); color: var(--u-muted, #5d6b72); display: inline-flex; align-items: center; gap: var(--s-2); }
+  .player__state::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #9ea7ab; }
+  .player.is-playing .player__state::before { background: #0d7480; }
+  .player__seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--u-surface, #ecf0f2); }
+  .player__seg button { border: 0; background: transparent; padding: 0 14px; height: 36px; border-radius: 999px; font: 500 14px/1 var(--font-text); color: var(--u-muted, #5d6b72); cursor: pointer; }
+  .player__seg button[aria-pressed="true"] { background: #fff; color: var(--u-ink, #1f3038); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+  .player__name { font: 500 clamp(30px, 3vw, 44px)/1.05 var(--font-display); letter-spacing: -0.03em; margin: 0; }
+  .player__desc { margin: var(--s-2) 0 0; font-size: 16px; line-height: 1.5; max-width: 46ch; }
+  .player__layers { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); align-content: start; }
+  .player__layers li { display: grid; grid-template-columns: 1fr auto; gap: 6px var(--s-4); font-size: 15px; }
+  .player__layers output { font: 400 14px/1.4 var(--font-mono); color: var(--u-muted, #5d6b72); }
+  .player__layers .bar { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: var(--u-surface, #ecf0f2); overflow: hidden; }
+  .player__layers .bar i { display: block; height: 100%; width: var(--v, 0%); background: #0d7480; border-radius: inherit; transition: width 1.6s cubic-bezier(.22,1,.36,1); }
+  .player__foot { display: flex; align-items: center; gap: var(--s-5); padding-top: var(--s-5); border-top: 1px solid var(--u-line, #e3e9ec); }
+  .player__play { width: 52px; height: 52px; border-radius: 50%; border: 0; background: #0d7480; color: #fff; display: grid; place-items: center; cursor: pointer; flex: none; }
+  .player__play svg { width: 20px; height: 20px; }
+  .player__play .i-pause, .player.is-playing .player__play .i-play { display: none; }
+  .player.is-playing .player__play .i-pause { display: block; }
+  .player__time { font: 400 15px/1.3 var(--font-mono); font-variant-numeric: tabular-nums; }
+  .player__time span { color: var(--u-muted, #5d6b72); }
+  .player__vol { margin-left: auto; display: flex; align-items: center; gap: var(--s-3); font-size: 14px; color: var(--u-muted, #5d6b72); }
+  .player__vol input { width: 120px; accent-color: #0d7480; }
+  @media (max-width: 639px) {
+    .player { padding: var(--s-5); gap: var(--s-4); }
+    .player__head { flex-wrap: wrap; }
+    .player__seg { width: 100%; } .player__seg button { flex: 1; padding: 0 6px; }
+    .player__vol { display: none; }
+  }
+
+  /* the steps' panels: one height for the group */
+  #how .panel { --p-h: 300px; }
+  @media (max-width: 639px) { #how .panel { --p-h: 200px; } }
+
+  /* stories: one large quote, two in a list beside it */
+  .quotes-side { display: grid; gap: var(--s-6); align-content: start; }
+  .quotes-side .quote { padding-bottom: var(--s-6); border-bottom: 1px solid var(--line); }
+  .quotes-side .quote blockquote { font-size: var(--t-card); line-height: 1.45; letter-spacing: -0.01em; }
+  .quote blockquote { margin: 0 0 var(--s-6); }
+  @media (max-width: 1023px) { .quotes-side { margin-top: var(--s-7); } }
+</style>
+</head>
+<body>
+<!-- type: software
+     deal: hero triptych, nav nav-cards, close close-type, footer footer-columns, rhythm dark-band (#how), buttons tonal,
+           mark dots, ground sage, palette cool-white-slate, type geist, card ground grain-gradient (#how panels)
+     moments: iris-opens on #how (the page's ground turns to the dark band through a widening circle) -->
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="dots" aria-hidden="true"></span>4Leafs</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item">
+        <a class="nav__link" href="index.html#soundscapes">Soundscapes <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <a class="menu-card span-4" href="index.html#soundscapes" data-pick="rain">
+              <div class="panel"><img class="frame__img" src="assets/img/photo-f92257040-500.jpg" alt="Raindrops on a window at dusk" style="transform: scale(1.32)"></div>
+              <span class="t-card">Rain</span>
+              <span class="t-small muted">Drops on glass, a tin roof, thunder far off</span>
+            </a>
+            <a class="menu-card span-4" href="index.html#soundscapes" data-pick="forest">
+              <div class="panel"><img class="frame__img" src="assets/img/photo-f160521400-500.jpg" alt="Pine trees in morning mist"></div>
+              <span class="t-card">Forest</span>
+              <span class="t-small muted">Wind in pines, a stream, a few birds</span>
+            </a>
+            <a class="menu-card span-4" href="index.html#soundscapes" data-pick="space">
+              <div class="panel"><img class="frame__img" src="assets/img/photo-f58832952-500.jpg" alt="The Milky Way over a wooden fence"></div>
+              <span class="t-card">Deep Space</span>
+              <span class="t-small muted">Low drones with a slow shimmer on top</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="index.html#how">Sessions</a></div>
+      <div class="nav__item"><a class="nav__link" href="index.html#stories">Stories</a></div>
+      <div class="nav__item"><a class="nav__link" href="index.html#pricing">Pricing</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="index.html#soundscapes" data-start>Start focusing</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <p><a class="link" href="index.html">4Leafs</a></p>
+  <section class="credits-list" id="credits" aria-labelledby="credits-h">
+    <h1 id="credits-h">Photograph credits</h1>
+    <ul>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Sad_Days_-_Flickr_-_Dylan_Luder.jpg">Dylan Luder</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Misty_morning_in_the_Pinelands_(53410257466).jpg">evergladesnps</a>, <a href="https://creativecommons.org/publicdomain/mark/1.0/">Public domain</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Milky_Way_Night_Sky_(Unsplash).jpg">Guillaume guillaume</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Start a 50-minute session now</h2>
+        <p>The free plan plays all three soundscapes, sessions up to 60 minutes.</p>
+      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="index.html#soundscapes" data-start>Start focusing<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark" data-mark="dots" aria-hidden="true"></span>4Leafs</a>
+          <p class="footer__lede">Generative soundscapes for focused work.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Soundscapes</h3><ul><li><a href="index.html#soundscapes" data-pick="rain">Rain</a></li><li><a href="index.html#soundscapes" data-pick="forest">Forest</a></li><li><a href="index.html#soundscapes" data-pick="space">Deep Space</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Sessions</h3><ul><li><a href="index.html#how">How it works</a></li><li><a href="index.html#stories">Stories</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Pricing</h3><ul><li><a href="index.html#pricing">Free</a></li><li><a href="index.html#pricing">Pro</a></li><li><a href="index.html#pricing">Enterprise</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Company</h3><ul><li><a href="mailto:hello@4leafs.example">Email us</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 4Leafs</span>
+        <div class="socials"></div>
+        <!-- CREDITS -->
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+
+<!-- the 4Leafs player: a generative audio engine (Web Audio) behind the app frame's controls -->
+<script>
+(function () {
+  "use strict";
+  var SCAPES = {
+    rain:   { name: "Rain", desc: "A steady downpour on glass and a tin roof, with thunder far off. It covers office talk without drawing your ear.",
+              layers: ["Drops on glass", "Tin roof", "Distant thunder"], start: [64, 38, 12] },
+    forest: { name: "Forest", desc: "Wind moving through tall pines, a stream close by and a bird now and then. Good for writing and planning.",
+              layers: ["Wind in pines", "Stream", "Birds"], start: [56, 30, 18] },
+    space:  { name: "Deep Space", desc: "Slow, warm drones at 55 Hz with harmonics drifting above them. Made for long sessions with no edges in the sound.",
+              layers: ["Low drone, 55 Hz", "Harmonics", "Shimmer"], start: [48, 26, 9] }
+  };
+  var SESSION = 50 * 60;
+
+  /* ---------- engine ---------- */
+  var Engine = (function () {
+    var ctx = null, master = null, cur = null, vol = 0.7;
+    function rand(a, b) { return a + Math.random() * (b - a); }
+    function ensure() {
+      if (ctx) return true;
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return false;
+      ctx = new AC(); master = ctx.createGain(); master.gain.value = vol;
+      var comp = ctx.createDynamicsCompressor(); master.connect(comp); comp.connect(ctx.destination);
+      return true;
+    }
+    function noise(type) {
+      var len = ctx.sampleRate * 4, buf = ctx.createBuffer(2, len, ctx.sampleRate);
+      for (var c = 0; c < 2; c++) { var d = buf.getChannelData(c), last = 0;
+        for (var i = 0; i < len; i++) { var w = Math.random() * 2 - 1;
+          if (type === "brown") { last = (last + 0.02 * w) / 1.02; d[i] = last * 3.5; } else d[i] = w; } }
+      return buf;
+    }
+    function loopSrc(type) { var s = ctx.createBufferSource(); s.buffer = noise(type); s.loop = true; return s; }
+    function lfo(rate, depth, target) { var o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = rate; g.gain.value = depth; o.connect(g); g.connect(target); o.start(); return o; }
+    function pan(out) { if (!ctx.createStereoPanner) return out; var p = ctx.createStereoPanner(); p.pan.value = rand(-0.85, 0.85); p.connect(out); return p; }
+
+    // each builder returns { nodes, timers, gains: [3 layer gains], max: [3 full levels] }
+    var build = {
+      rain: function (out) {
+        var nodes = [], timers = [], gains = [];
+        var g0 = ctx.createGain(), s = loopSrc("white"), hp = ctx.createBiquadFilter(), lp = ctx.createBiquadFilter();
+        hp.type = "highpass"; hp.frequency.value = 500; lp.type = "lowpass"; lp.frequency.value = 5200;
+        s.connect(hp); hp.connect(lp); lp.connect(g0); g0.connect(out); s.start(); nodes.push(s, lfo(0.03, 900, lp.frequency));
+        var dropBuf = noise("white"), dropsOut = ctx.createGain(); dropsOut.connect(g0);
+        (function drop() {
+          var t = ctx.currentTime, d = ctx.createBufferSource(), bp = ctx.createBiquadFilter(), e = ctx.createGain();
+          d.buffer = dropBuf; bp.type = "bandpass"; bp.frequency.value = rand(1800, 5200); bp.Q.value = 6;
+          e.gain.setValueAtTime(0, t); e.gain.linearRampToValueAtTime(rand(0.2, 0.6), t + 0.003); e.gain.exponentialRampToValueAtTime(0.0001, t + rand(0.04, 0.1));
+          d.connect(bp); bp.connect(e); e.connect(pan(dropsOut)); d.start(t, Math.random() * 3, 0.15);
+          timers.push(setTimeout(drop, rand(30, 160)));
+        })();
+        var g1 = ctx.createGain(), r = loopSrc("brown"), rl = ctx.createBiquadFilter();
+        rl.type = "bandpass"; rl.frequency.value = 420; rl.Q.value = 0.6; r.connect(rl); rl.connect(g1); g1.connect(out); r.start(); nodes.push(r);
+        var g2 = ctx.createGain(), th = loopSrc("brown"), tl = ctx.createBiquadFilter();
+        tl.type = "lowpass"; tl.frequency.value = 140; th.connect(tl); tl.connect(g2); g2.connect(out); th.start(); nodes.push(th, lfo(0.04, 0.5, g2.gain));
+        gains.push(g0, g1, g2);
+        return { nodes: nodes, timers: timers, gains: gains, max: [0.35, 0.9, 1.4] };
+      },
+      forest: function (out) {
+        var nodes = [], timers = [], gains = [];
+        var g0 = ctx.createGain(), w = loopSrc("brown"), lp = ctx.createBiquadFilter();
+        lp.type = "lowpass"; lp.frequency.value = 650; w.connect(lp); lp.connect(g0); g0.connect(out); w.start(); nodes.push(w, lfo(0.07, 380, lp.frequency));
+        var g1 = ctx.createGain(), st = loopSrc("white"), bp = ctx.createBiquadFilter();
+        bp.type = "bandpass"; bp.frequency.value = 2600; bp.Q.value = 0.8; st.connect(bp); bp.connect(g1); g1.connect(out); st.start(); nodes.push(st, lfo(0.3, 400, bp.frequency));
+        var g2 = ctx.createGain(); g2.connect(out);
+        (function bird() {
+          var t = ctx.currentTime, base = rand(2200, 4200), n = Math.floor(rand(1, 5)), bg = ctx.createGain(); bg.gain.value = 0.12; bg.connect(pan(g2));
+          for (var k = 0; k < n; k++) { var s0 = t + k * rand(0.12, 0.22), dur = rand(0.06, 0.14), o = ctx.createOscillator(), e = ctx.createGain(), f = base * rand(0.9, 1.15);
+            o.frequency.setValueAtTime(f, s0); o.frequency.exponentialRampToValueAtTime(f * rand(1.15, 1.5), s0 + dur);
+            e.gain.setValueAtTime(0, s0); e.gain.linearRampToValueAtTime(1, s0 + 0.015); e.gain.exponentialRampToValueAtTime(0.001, s0 + dur);
+            o.connect(e); e.connect(bg); o.start(s0); o.stop(s0 + dur + 0.05); }
+          timers.push(setTimeout(bird, rand(1800, 6000)));
+        })();
+        gains.push(g0, g1, g2);
+        return { nodes: nodes, timers: timers, gains: gains, max: [0.9, 0.12, 1] };
+      },
+      space: function (out) {
+        var nodes = [], timers = [], gains = [];
+        var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 900; lp.Q.value = 2; nodes.push(lfo(0.02, 450, lp.frequency));
+        var delay = ctx.createDelay(2), fb = ctx.createGain(); delay.delayTime.value = 0.8; fb.gain.value = 0.45; delay.connect(fb); fb.connect(delay); fb.connect(out);
+        var g0 = ctx.createGain(), g1 = ctx.createGain(), g2 = ctx.createGain();
+        g0.connect(lp); g1.connect(lp); lp.connect(out); lp.connect(delay); g2.connect(delay);
+        [[1, "sawtooth", g0], [2, "triangle", g0], [1.5, "triangle", g1], [3, "sine", g1], [4.5, "sine", g1]].forEach(function (v) {
+          var o = ctx.createOscillator(); o.type = v[1]; o.frequency.value = 55 * v[0]; o.detune.value = rand(-8, 8);
+          var og = ctx.createGain(); og.gain.value = 0.3 / v[0]; o.connect(og); og.connect(v[2]); o.start(); nodes.push(o, lfo(rand(0.01, 0.05), 6, o.detune));
+        });
+        var sh = ctx.createOscillator(), shg = ctx.createGain(); sh.type = "sine"; shg.gain.value = 0; sh.connect(shg); shg.connect(g2); sh.start(); nodes.push(sh);
+        (function sparkle() {
+          var t = ctx.currentTime; sh.frequency.setValueAtTime(55 * [8, 12, 16, 18, 24][Math.floor(rand(0, 5))], t);
+          shg.gain.cancelScheduledValues(t); shg.gain.setValueAtTime(0, t); shg.gain.linearRampToValueAtTime(0.25, t + 1.5); shg.gain.linearRampToValueAtTime(0, t + 5);
+          timers.push(setTimeout(sparkle, rand(6000, 12000)));
+        })();
+        gains.push(g0, g1, g2);
+        return { nodes: nodes, timers: timers, gains: gains, max: [0.9, 0.9, 0.6] };
+      }
+    };
+
+    function stop(fade) {
+      if (!cur) return;
+      var c = cur; cur = null; var t = ctx.currentTime;
+      c.out.gain.cancelScheduledValues(t); c.out.gain.setValueAtTime(c.out.gain.value, t); c.out.gain.linearRampToValueAtTime(0, t + fade);
+      clearInterval(c.evolve); c.inst.timers.push = function (id) { clearTimeout(id); }; c.inst.timers.forEach(clearTimeout);
+      setTimeout(function () { c.inst.nodes.forEach(function (n) { try { n.stop(); } catch (e) {} }); c.out.disconnect(); }, fade * 1000 + 100);
+    }
+    function setLevels(levels, glide) {
+      if (!cur) return;
+      cur.levels = levels.slice();
+      cur.inst.gains.forEach(function (g, i) { g.gain.setTargetAtTime(cur.inst.max[i] * levels[i] / 100, ctx.currentTime, glide); });
+    }
+    return {
+      play: function (key) {
+        if (!ensure()) return false;
+        if (ctx.state === "suspended") ctx.resume();
+        if (cur && cur.key === key) return true;
+        stop(1.5);
+        var out = ctx.createGain(); out.gain.value = 0; out.connect(master);
+        out.gain.linearRampToValueAtTime(1, ctx.currentTime + 30);            /* the 30-second fade in */
+        var inst = build[key](out);
+        cur = { key: key, out: out, inst: inst, levels: SCAPES[key].start.slice() };
+        setLevels(cur.levels, 0.01);
+        cur.evolve = setInterval(function () {                                 /* every 20 s one layer drifts */
+          var l = cur.levels.slice(), i = Math.floor(rand(0, 3));
+          l[i] = Math.round(Math.max(5, Math.min(90, l[i] + rand(-18, 18))));
+          setLevels(l, 6); Engine.onChange && Engine.onChange(l);
+        }, 20000);
+        return true;
+      },
+      stop: function () { if (ctx) stop(1.2); },
+      playing: function () { return cur ? cur.key : null; },
+      levels: function () { return cur ? cur.levels : null; },
+      volume: function (v) { vol = v; if (master) master.gain.setTargetAtTime(v, ctx.currentTime, 0.05); },
+      onChange: null
+    };
+  })();
+
+  /* ---------- the player in the app frame ---------- */
+  var player = document.getElementById("player");
+  if (!player) return;
+  var nameEl = document.getElementById("pl-name"), descEl = document.getElementById("pl-desc"),
+      layersEl = document.getElementById("pl-layers"), playBtn = document.getElementById("pl-play"),
+      timeEl = document.getElementById("pl-time"), stateEl = document.getElementById("pl-state");
+  var selected = "rain", started = 0, tick = null;
+
+  function fmt(s) { var m = Math.floor(s / 60), r = s % 60; return (m < 10 ? "0" : "") + m + ":" + (r < 10 ? "0" : "") + r; }
+  function drawLevels(levels) {
+    layersEl.querySelectorAll("li").forEach(function (li, i) {
+      li.querySelector("output").textContent = levels[i] + "%";
+      li.querySelector(".bar i").style.setProperty("--v", levels[i] + "%");
+    });
+  }
+  function render() {
+    var s = SCAPES[selected], on = Engine.playing() === selected;
+    player.dataset.scape = selected;
+    nameEl.textContent = s.name; descEl.textContent = s.desc;
+    layersEl.querySelectorAll("li").forEach(function (li, i) { li.firstElementChild.textContent = s.layers[i]; });
+    drawLevels(on ? Engine.levels() : s.start);
+    player.classList.toggle("is-playing", on);
+    playBtn.setAttribute("aria-label", (on ? "Pause " : "Play ") + s.name);
+    stateEl.textContent = on ? "Playing, layers drift every 20 seconds" : "Ready to play";
+    document.querySelectorAll(".player__seg [data-pick]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.pick === selected)); });
+    document.querySelectorAll(".app .ui-win__row[data-scape]").forEach(function (r) {
+      var me = r.dataset.scape === selected; r.classList.toggle("is-current", me);
+      r.querySelector("[data-st]").textContent = me ? (on ? "Playing" : "Selected") : "Ready";
+    });
+  }
+  function start() {
+    if (!Engine.play(selected)) { stateEl.textContent = "This browser cannot play Web Audio"; return; }
+    started = Date.now(); timeEl.textContent = "00:00"; clearInterval(tick);
+    tick = setInterval(function () {
+      var s = Math.floor((Date.now() - started) / 1000);
+      if (s >= SESSION) { stop(); timeEl.textContent = fmt(SESSION); stateEl.textContent = "Session done"; return; }
+      timeEl.textContent = fmt(s);
+    }, 1000);
+    render();
+  }
+  function stop() { Engine.stop(); clearInterval(tick); render(); }
+  function pick(key) { selected = key; if (Engine.playing()) start(); else render(); }
+
+  Engine.onChange = function (l) { if (Engine.playing() === selected) drawLevels(l); };
+  playBtn.addEventListener("click", function () { Engine.playing() ? stop() : start(); });
+  document.querySelectorAll("[data-pick]").forEach(function (b) { b.addEventListener("click", function () { pick(b.dataset.pick); }); });
+  document.querySelectorAll(".app .ui-win__row[data-scape]").forEach(function (r) { r.addEventListener("click", function () { pick(r.dataset.scape); }); });
+  document.querySelectorAll("[data-start]").forEach(function (a) { a.addEventListener("click", function () { if (!Engine.playing()) start(); }); });
+  document.getElementById("pl-vol").addEventListener("input", function (e) { Engine.volume(parseFloat(e.target.value)); });
+  render();
+})();
+</script>
+</body>
+</html>
