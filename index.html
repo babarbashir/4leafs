@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="assets/ui/stat/fragment.css">
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 <script src="assets/backgrounds/backgrounds.js"></script>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('orb-live')</script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
@@ -167,6 +168,78 @@
   @media (max-width: 639px) { button.loop-pause.hero-current__pause { left: auto; right: 0; bottom: 68px; } }
   .hero-current__pause.is-paused svg rect { display: none; }
   .hero-current__pause.is-paused svg { background: currentColor; clip-path: polygon(30% 18%, 30% 82%, 82% 50%); }
+
+  /* Shapes: the liquid orb (assets/orb-shapes.js). At rest: two screens, the words in the left five columns, the orb in the right seven */
+  #shapes { --h: 2; --hm: 2; }
+  #shapes .orb__stage { position: relative; z-index: 1; height: 100%; }
+  #shapes .orb__grid { height: 100%; row-gap: 0; }
+  #shapes .orb__copy { grid-column: 1 / span 6; display: flex; flex-direction: column; justify-content: space-between; gap: var(--s-7); min-width: 0; }
+  #shapes .orb__head h2 { max-width: 14ch; }
+  #shapes .orb__chapters { display: grid; gap: var(--s-7); }
+  #shapes .orb__ch h3 { margin: 0 0 var(--s-3); overflow: clip; overflow-clip-margin: 4px; }
+  #shapes .orb__ch h3 > span { display: inline-block; }
+  #shapes .orb__ch p { margin: 0 0 var(--s-4); max-width: 40ch; color: var(--ink); font-size: var(--t-lead); line-height: 1.5; }
+  #shapes .orb__layers { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); margin: 0; padding: 0; list-style: none; font: 400 var(--t-small)/1.4 var(--font-mono); color: var(--muted); }
+  #shapes .orb__layers li { display: inline-flex; align-items: center; gap: var(--s-2); }
+  #shapes .orb__layers li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #7fc6cd; }
+  #shapes .orb__steps { display: none; }
+  #shapes .orb__view { grid-column: 7 / -1; position: relative; min-height: 480px; }
+  #shapes .orb__canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+  /* the still under the render: shown until WebGL draws, and for good if it cannot */
+  #shapes .orb__still { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;
+    -webkit-mask-image: radial-gradient(closest-side, #000 82%, transparent); mask-image: radial-gradient(closest-side, #000 82%, transparent); }
+  #shapes.has-gl .orb__still { display: none; }
+  button.loop-pause.orb__pause { right: 0; bottom: 0; }
+  .orb__pause.is-paused svg rect { display: none; }
+  .orb__pause.is-paused svg { background: currentColor; clip-path: polygon(30% 18%, 30% 82%, 82% 50%); }
+  /* at rest the two screens split: the heading and the still orb on the first, the three soundscapes side by side on the second */
+  html:not(.orb-live) #shapes .orb__grid { grid-template-rows: calc(100svh - var(--padt) - var(--padb) - var(--bar, 0px)) auto; row-gap: calc(var(--padt) + var(--padb) + var(--bar, 0px)); }
+  html:not(.orb-live) #shapes .orb__copy { display: contents; }
+  html:not(.orb-live) #shapes .orb__head { grid-area: 1 / 1 / 2 / 7; }
+  html:not(.orb-live) #shapes .orb__view { grid-area: 1 / 7 / 2 / -1; }
+  html:not(.orb-live) #shapes .orb__chapters { grid-area: 2 / 1 / 3 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gutter); align-self: start; }
+  @media (max-width: 767px) {
+    #shapes .orb__grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(320px, 1fr); }
+    #shapes .orb__copy, #shapes .orb__view { grid-column: 1 / -1; }
+    #shapes .orb__view { grid-row: 2; min-height: 320px; }
+    #shapes .orb__ch h3 { font-size: var(--t-card); }
+    html:not(.orb-live) #shapes .orb__grid { grid-template-rows: auto minmax(320px, 1fr) auto; row-gap: var(--s-7); }
+    html:not(.orb-live) #shapes .orb__head { grid-area: 1 / 1; }
+    html:not(.orb-live) #shapes .orb__view { grid-area: 2 / 1; }
+    html:not(.orb-live) #shapes .orb__chapters { grid-area: 3 / 1; grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* live (html.orb-live): two screens tall, the stage held for one while the scroll morphs the orb */
+  .orb-live main > #shapes { height: 200vh; height: 200svh; min-height: 0; padding: 0; }
+  .orb-live #shapes > .orb__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: clip;
+    padding: var(--padt) 0 calc(var(--padb) + var(--bar, 0px)); box-sizing: border-box; }
+  .orb-live #shapes .orb__view { min-height: 0; }
+  .orb-live #shapes .orb__chapters { gap: 0; }
+  @media (min-width: 768px) { .orb-live #shapes .orb__copy { justify-content: center; gap: var(--s-8); } }
+  .orb-live #shapes .orb__ch { grid-area: 1 / 1; }
+  .orb-live #shapes .orb__ch:not(.is-current) { pointer-events: none; }
+  .orb-live #shapes .orb__steps { display: flex; gap: var(--s-4); margin: var(--s-6) 0 0; padding: 0; list-style: none; }
+  .orb-live #shapes .orb__steps li { flex: 1; display: grid; gap: var(--s-2); font: 400 var(--t-small)/1.3 var(--font-mono); color: var(--muted); transition: color .3s ease; }
+  .orb-live #shapes .orb__steps li.is-current { color: var(--ink); }
+  .orb-live #shapes .orb__steps i { display: block; height: 2px; background: var(--line); overflow: hidden; }
+  .orb-live #shapes .orb__steps b { display: block; height: 100%; background: #7fc6cd; transform-origin: 0 50%; transform: scaleX(0); }
+  @media (max-width: 767px) {
+    .orb-live #shapes .orb__grid { grid-template-rows: auto minmax(0, 1fr) auto; row-gap: var(--s-4); }
+    .orb-live #shapes .orb__copy { display: contents; }
+    .orb-live #shapes .orb__head { grid-row: 1; }
+    .orb-live #shapes .orb__view { grid-row: 2; min-height: 0; }
+    .orb-live #shapes .orb__chapters { grid-row: 3; }
+    .orb-live #shapes .orb__ch p { font-size: var(--t-body); margin-bottom: var(--s-3); }
+    .orb-live #shapes .orb__steps { margin-top: var(--s-4); }
+  }
+  /* a short phone: the orb keeps its room; the layer list stays for screen readers only */
+  @media (max-width: 767px) and (max-height: 700px) {
+    .orb-live #shapes .orb__grid { row-gap: var(--s-2); }
+    .orb-live #shapes .orb__steps { margin-top: var(--s-3); }
+    .orb-live #shapes .orb__ch p { margin-bottom: 0; font-size: var(--t-small); }
+    .orb-live #shapes .orb__ch h3 { margin-bottom: var(--s-2); }
+    .orb-live #shapes .orb__layers { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  }
 </style>
 </head>
 <body>
@@ -272,6 +345,48 @@
       </div>
       <div class="span-3 start-10 hero__cta"><a class="btn btn--primary" href="#soundscapes" data-start>Start focusing</a></div>
     </div></div>
+  </section>
+
+  <!-- SHAPES: the big scene below the hero (assets/orb-shapes.js). A liquid orb that breathes and takes one shape per
+       soundscape as the page scrolls; GSAP ScrollTrigger scrubs the shape, the steps and the words on one timeline.
+       Live it is three screens with the stage held for two; at rest (reduced motion, no script) two screens, all words shown. -->
+  <section class="section ground-inverse orb" id="shapes" data-big-scene="liquid-orb" aria-labelledby="orb-h">
+    <div class="wrap orb__stage">
+      <div class="grid orb__grid">
+        <div class="orb__copy">
+          <div class="orb__head">
+            <h2 id="orb-h">Every soundscape has its own shape</h2>
+            <ol class="orb__steps" aria-hidden="true">
+              <li data-step class="is-current"><span>Rain</span><i><b></b></i></li>
+              <li data-step><span>Forest</span><i><b></b></i></li>
+              <li data-step><span>Deep Space</span><i><b></b></i></li>
+            </ol>
+          </div>
+          <div class="orb__chapters">
+            <article class="orb__ch is-current" data-ch>
+              <h3><span>Rain</span></h3>
+              <p>Drops on glass and a tin roof, with thunder far off. Small, close sounds that cover office talk without drawing your ear.</p>
+              <ul class="orb__layers" aria-label="Rain layers"><li>Drops on glass</li><li>Tin roof</li><li>Distant thunder</li></ul>
+            </article>
+            <article class="orb__ch" data-ch>
+              <h3><span>Forest</span></h3>
+              <p>Wind through tall pines, a stream close by and a bird now and then. Wide and slow, good for writing and planning.</p>
+              <ul class="orb__layers" aria-label="Forest layers"><li>Wind in pines</li><li>Stream</li><li>Birds</li></ul>
+            </article>
+            <article class="orb__ch" data-ch>
+              <h3><span>Deep Space</span></h3>
+              <p>Warm drones at 55 Hz with harmonics drifting above them. No edges in the sound, made for long reading sessions.</p>
+              <ul class="orb__layers" aria-label="Deep Space layers"><li>Low drone, 55 Hz</li><li>Harmonics</li><li>Shimmer</li></ul>
+            </article>
+          </div>
+        </div>
+        <div class="orb__view">
+          <img class="orb__still" src="assets/img/orb-rain-still.jpg" width="960" height="960" alt="" loading="lazy" decoding="async">
+          <canvas class="orb__canvas" data-orb aria-hidden="true"></canvas>
+          <button class="loop-pause orb__pause" type="button" data-orb-pause aria-pressed="false" aria-label="Pause the orb animation"><svg viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2.5" width="2.6" height="9" rx=".8"/><rect x="8.4" y="2.5" width="2.6" height="9" rx=".8"/></svg></button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SOUNDSCAPES: app-frame. The list of soundscapes and sessions beside the open player (a working one: press play) -->
@@ -573,6 +688,9 @@
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script src="assets/hero-current.js" defer></script>
+<script src="assets/vendor/gsap-3.12.5.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger-3.12.5.min.js" defer></script>
+<script type="module" src="assets/orb-shapes.js"></script>
 
 <!-- the 4Leafs player: a generative audio engine (Web Audio) behind the app frame's controls -->
 <script>
